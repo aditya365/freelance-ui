@@ -1,0 +1,36 @@
+<div class="card-item" (click)="(profileSlected(profile))" >
+  <mat-card class="card">
+    <mat-card-header>
+      <div class="card-header flex-class">
+          <div class="card-profile flex-class">
+            <div class="card-avatar">
+              <img mat-card-avatar [src]="profile.imgUrl" class="card-header-image">
+            </div>
+            <div>
+              <mat-card-subtitle>{{profile.designation}}</mat-card-subtitle>
+              <mat-card-title> {{profile.username}} </mat-card-title>
+            </div>
+        </div>
+        <div class="talent flex-class">
+            <mat-chip-list>
+              <mat-chip style="background-color: #26a541" selected>
+                {{ profile.rating }}
+                <mat-icon>star</mat-icon>
+              </mat-chip>
+            </mat-chip-list>
+          <div class="reviews">
+            <p>{{ profile.reviews }} Reviews</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <p> {{profile.description}} </p>
+      <div class="chip-list flex-class">
+        <div *ngFor="let skill of profile.registerSkills"  class="chip">
+          <p class="chip-content">{{skill}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

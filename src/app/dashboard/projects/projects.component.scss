@@ -1,0 +1,13 @@
+.projects {
+    background-color: #FFFFFF;
+    margin-left: 5em;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 0.3em;
+}
+.projects:hover {
+    // background-color: lightpink;
+    transition: 0.8s all ease-in-out;
+    margin-left: 4em;
+    // transform: inherit;
+}

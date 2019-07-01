@@ -1,0 +1,31 @@
+<nav>
+  <app-header></app-header>
+</nav>
+<div class="signin">
+  <div class="signin-container">
+    <div [formGroup]="signInForm" (ngSubmit)="signIn()">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="signInForm.controls['email'].errors?.required">
+          Enter a valid Email
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password"  formControlName="password" required>
+        <mat-error *ngIf="signInForm.controls['password'].errors?.required">
+          password required
+        </mat-error>
+      </mat-form-field>
+      <div class="signin-button">
+          <button mat-flat-button color="accent" routerLink="/register">Signup</button>
+          <button mat-flat-button color="primary" (click)="signIn()" [disabled]="signInForm.status=='INVALID'" type="submit">Signin</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer>

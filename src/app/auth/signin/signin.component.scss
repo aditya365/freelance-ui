@@ -1,0 +1,17 @@
+.signin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signin-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5em;
+    max-width: 400px;
+    min-width: 300px;
+}
+.signin-button {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+}

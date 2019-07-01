@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    background-color: darkslategray;
+}
+.footer-item-0 {
+    flex-basis: 40%;
+    margin: 2em;
+    color: bisque;
+}
+.footer-item-1 {
+    margin: 2em;
+    flex-basis: 20%;
+}
+.footer-item-2 {
+    margin: 2em;
+    flex-basis: 20%;
+}
+.footer-item-3 {
+    margin: 2em;
+    flex-basis: 20%;
+}
+.sub-heading {
+    color: cyan;
+}

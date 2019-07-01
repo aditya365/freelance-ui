@@ -1,0 +1,60 @@
+<nav>
+  <app-header></app-header>
+</nav>
+<div class="signin">
+  <div class="signin-container">
+    <div [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <mat-form-field appearance="outline" class="signup-input">
+        <mat-label>FirstName</mat-label>
+        <input matInput placeholder="FirstName" formControlName="firstName" required>
+        <mat-error *ngIf="signUpForm.controls['firstName'].errors?.required">
+          FirstName required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline"  class="signup-input">
+          <mat-label>LastName</mat-label>
+          <input matInput placeholder="LastName" formControlName="lastName" >
+        </mat-form-field>
+      <mat-form-field appearance="outline"  class="signup-input">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email" required>
+        <mat-error *ngIf="signUpForm.controls['email'].errors?.required">
+          Enter a valid Email
+        </mat-error>
+        <mat-error *ngIf="signUpForm.controls['email'].errors?.emailTaken">
+          Email already taken. Try to <a routerLink="/signin">signin</a>.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline"  class="signup-input">
+        <mat-label>Select Role</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option *ngFor="let role of roles" [value]="role.name">
+            {{ role.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline"  class="signup-input">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password"  formControlName="password" required>
+        <mat-error *ngIf="signUpForm.controls['password'].errors?.required">
+          password required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline"  class="signup-input">
+        <mat-label>ConfirmPassword</mat-label>
+        <input matInput (ngModelChange)="onConfirmPasswordChange()" type="password" placeholder="ConfirmPassword"  formControlName="cPassword" required>
+        <mat-error *ngIf="signUpForm.controls['cPassword'].errors?.required">
+          Confirm Password required
+        </mat-error>
+      </mat-form-field>
+        <re-captcha formControlName="recaptcha"></re-captcha>
+      <div class="signin-button">
+          <button mat-flat-button color="accent" routerLink="/signin">SignIn</button>
+          <button mat-flat-button color="primary" (click)="signUp()" [disabled]="signUpForm.status=='INVALID'" type="submit">SignUp</button>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <app-footer></app-footer>
+</footer>
