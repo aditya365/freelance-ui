@@ -5,7 +5,6 @@ import { ViewComponent } from './profile/view/view.component';
 import { EditComponent } from './profile/edit/edit.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardComponent } from './dashboard.component';
-import { HomeComponent } from '../home/home.component';
 import { IndexComponent } from './index/index.component';
 import { AuthGuardService } from '../services/guard/auth-guard.service';
 

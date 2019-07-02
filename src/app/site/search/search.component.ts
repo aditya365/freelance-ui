@@ -7,11 +7,11 @@ import { Skills } from 'src/app/models/skills';
 import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
-  selector: 'app-search',
+  selector: 'app-site-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit, OnDestroy {
+export class SiteSearchComponent implements OnInit {
   skills: Skills[];
   query$ = new Subject<string>();
 
@@ -25,9 +25,6 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     
-  }
-  ngOnDestroy() {
-
   }
   getSkill() {
    
