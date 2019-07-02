@@ -4,17 +4,23 @@ import { RecaptchaModule, RECAPTCHA_SETTINGS, RecaptchaSettings } from 'ng-recap
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { AlertService } from '../services/alert/alert.service';
 import { MaterialModule } from '../material/material.module';
+import { SearchComponent } from './search/search.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    SearchComponent
+  ],
   imports: [
     CommonModule,
+    RouterModule,
     RecaptchaModule,
     RecaptchaFormsModule,
     MaterialModule
   ], exports: [
     RecaptchaModule,
     RecaptchaFormsModule,
+    SearchComponent
   ], providers: [AlertService,
     {
       provide: RECAPTCHA_SETTINGS,

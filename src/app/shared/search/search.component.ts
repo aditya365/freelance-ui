@@ -7,11 +7,11 @@ import { Skills } from 'src/app/models/skills';
 import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
-  selector: 'app-site-search',
+  selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SiteSearchComponent implements OnInit {
+export class SearchComponent implements OnInit {
   skills: Skills[];
   query$ = new Subject<string>();
 
@@ -19,7 +19,6 @@ export class SiteSearchComponent implements OnInit {
     this.searchService.search(this.query$)
       .subscribe(results => {
         this.skills = results;
-        console.log('Skils' + results);
       });
   }
 
