@@ -3,7 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Http } from '@angular/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/userLogin';
+import { User } from 'src/app/core/models/user-login.model';
 import { AlertService } from '../alert/alert.service';
 
 @Injectable({
@@ -46,10 +46,10 @@ export class SigninService {
             }, 2000);
           }
         },
-        (error) => {
-          this.alert.alert('Username/Password is wrong!', 'X');
-        }
-      );
+          (error) => {
+            this.alert.alert('Username/Password is wrong!', 'X');
+          }
+        );
     }
   }
 

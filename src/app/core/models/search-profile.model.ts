@@ -1,4 +1,4 @@
-export class searchProfile {
+export class SearchProfile {
   public id = '';
   public username = '';
   public designation = '';

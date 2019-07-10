@@ -3,7 +3,7 @@ import { Observable, Observer, Subject } from 'rxjs';
 import 'rxjs/Rx';
 import { Subscription } from 'rxjs/Subscription';
 import { ObserversModule } from '@angular/cdk/observers';
-import { Skills } from 'src/app/models/skills';
+import { Skills } from 'src/app/core/models/skills.model';
 import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({

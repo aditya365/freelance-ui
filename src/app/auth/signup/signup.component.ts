@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { UserSignUp } from 'src/app/models/userSignUp';
+import { UserSignup } from 'src/app/core/models/user-signup.model';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { SignupService } from 'src/app/services/auth/signup.service';
 import { Router } from '@angular/router';
-import { Role } from 'src/app/models/role';
+import { Role } from 'src/app/core/models/role.model';
 import { ValidationService } from 'src/app/services/auth/validation.service';
 import { ReCaptchaV3Service } from 'ng-recaptcha';
 
@@ -14,7 +14,7 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
-  signUpDetails: UserSignUp = {
+  signUpDetails: UserSignup = {
     firstName: '',
     lastName: '',
     email: '',

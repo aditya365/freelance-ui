@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { searchProfile } from 'src/app/models/searchProfile';
+import { SearchProfile } from 'src/app/core/models/search-profile.model';
 
 @Component({
   selector: 'app-developer-profile',
@@ -7,8 +7,8 @@ import { searchProfile } from 'src/app/models/searchProfile';
   styleUrls: ['./developer-profile.component.scss']
 })
 export class DeveloperProfileComponent implements OnInit {
-  @Input() profile: searchProfile;
-  @Output() selectEvent = new EventEmitter<searchProfile>();
+  @Input() profile: SearchProfile;
+  @Output() selectEvent = new EventEmitter<SearchProfile>();
 
   constructor() { }
 
