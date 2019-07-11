@@ -12,16 +12,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
-import { IndexComponent } from './index/index.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent, IndexComponent],
+  declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [DashboardComponent]
