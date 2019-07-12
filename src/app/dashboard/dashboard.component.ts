@@ -12,11 +12,15 @@ export class DashboardComponent implements OnInit {
 
   private links=[{
     label:'Dashboard',
-    route:'',
+    route:'/dashboard',
     icon:'dashboard'
   },{
     label:'Mail',
     route:'mail',
+    icon:'email'
+  },{
+    label:'Projects',
+    route:'projects',
     icon:'email'
   }];
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {

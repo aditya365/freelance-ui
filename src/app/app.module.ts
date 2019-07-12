@@ -10,6 +10,7 @@ import { UserModule } from './user/user.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
+import { MailModule } from './dashboard/mail/mail.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    MailModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,13 +13,15 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
+import { MailModule } from './mail/mail.module';
 
 @NgModule({
   declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    MailModule
   ],
   providers: [],
   bootstrap: [DashboardComponent]

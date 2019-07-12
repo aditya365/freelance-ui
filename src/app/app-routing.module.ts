@@ -10,7 +10,11 @@ const routes: Routes = [
   {
     path:'auth',
     loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
-  }
+  },
+  // {
+  //   path: 'mail',
+  //   loadChildren: () => import('./dashboard/mail/mail.module').then(mod => mod.MailModule)
+  // },
   // {
   //   path: 'user',
   //   loadChildren: () => import('./user/user.module').then(module => module.UserModule)
