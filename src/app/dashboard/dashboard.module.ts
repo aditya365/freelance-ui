@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { IndexComponent } from './index/index.component';
+import { MailModule } from './mail/mail.module';
 
 @NgModule({
   declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent, IndexComponent],
@@ -21,7 +22,8 @@ import { IndexComponent } from './index/index.component';
     DashboardRoutingModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MailModule
   ],
   providers: [],
   bootstrap: [DashboardComponent]
