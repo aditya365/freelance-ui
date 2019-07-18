@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MailRoutingModule } from './mail-routing.module';
-import { InboxComponent } from '../../inbox/inbox.component';
-import { InboxItemComponent } from './inbox-item/inbox-item.component';
-import { MailListComponent } from './mail-list/mail-list.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { SentComponent } from './sent/sent.component';
 import { MailItemComponent } from './mail-item/mail-item.component';
-import { MaterialModule } from 'src/app/material/material.module';
+import { MailDetailComponent } from './mail-detail/mail-detail.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
-  declarations: [InboxComponent, InboxItemComponent, MailListComponent, MailItemComponent],
+  declarations: [InboxComponent, SentComponent, MailItemComponent, MailDetailComponent],
   imports: [
     CommonModule,
     MailRoutingModule,
-    MaterialModule
+    HttpClientModule,
+    SharedModule
   ]
 })
 export class MailModule { }

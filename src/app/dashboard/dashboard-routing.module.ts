@@ -5,19 +5,21 @@ import { ViewComponent } from './profile/view/view.component';
 import { EditComponent } from './profile/edit/edit.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardComponent } from './dashboard.component';
-import { IndexComponent } from './index/index.component';
 import { AuthGuardService } from '../services/guard/auth-guard.service';
+import { InboxComponent } from './mail/inbox/inbox.component';
+import { MailDetailComponent } from './mail/mail-detail/mail-detail.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'dashboard',
     component: DashboardComponent,
     children: [
-      {path: '', component: IndexComponent},
       {path: 'projects', component: ProjectsComponent},
       {path: 'profile', component: ProfileComponent},
+      {path: 'mail', component: InboxComponent},
+      {path: 'mail/:id', component: MailDetailComponent},
     ],
-    canActivate: [AuthGuardService]
+    // canActivate: [AuthGuardService]
   }
 ];
 

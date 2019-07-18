@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { MailService } from '../mail.service';
 import { Mail } from '../models/mail';
+import { MailService } from '../mail.service';
 
 @Component({
-  selector: 'app-inbox',
-  templateUrl: './inbox.component.html',
-  styleUrls: ['./inbox.component.scss']
+  selector: 'app-mail-detail',
+  templateUrl: './mail-detail.component.html',
+  styleUrls: ['./mail-detail.component.scss']
 })
-export class InboxComponent implements OnInit {
+export class MailDetailComponent implements OnInit {
   mails: Mail[];
   constructor(private mailservice: MailService) { }
 

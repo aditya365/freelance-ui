@@ -1,3 +1,17 @@
-<section>
-  <router-outlet></router-outlet>
-</section>
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="primary" class="toolbar">
+        <button mat-icon-button (click)="snav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <h1>Freelancer</h1>
+    </mat-toolbar>
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'side' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56" opened hasBackdrop=false>
+            <dashboard-sidebar [links]="links"></dashboard-sidebar>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>
