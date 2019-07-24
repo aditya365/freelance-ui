@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard.component';
 import { AuthGuardService } from '../services/guard/auth-guard.service';
 import { InboxComponent } from './mail/inbox/inbox.component';
 import { MailDetailComponent } from './mail/mail-detail/mail-detail.component';
+import { ComposeComponent } from './mail/compose/compose.component';
+import {SentComponent} from './mail/sent/sent.component'
 
 const routes: Routes = [
   {
@@ -18,7 +20,11 @@ const routes: Routes = [
       {path: 'profile', component: ProfileComponent},
       {path: 'mail', component: InboxComponent},
       {path: 'mail/:id', component: MailDetailComponent},
+      {path: 'compose', component: ComposeComponent},
+      {path: 'send', component: SentComponent},
+
     ],
+    
     // canActivate: [AuthGuardService]
   }
 ];

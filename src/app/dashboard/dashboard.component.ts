@@ -10,7 +10,8 @@ export class DashboardComponent implements OnInit {
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
 
-  private links=[{
+  // private
+   links=[{
     label:'Dashboard',
     route:'/dashboard',
     icon:'dashboard'
@@ -18,11 +19,22 @@ export class DashboardComponent implements OnInit {
     label:'Mail',
     route:'mail',
     icon:'email'
-  },{
+  },
+  {
+    label:'Send',
+    route:'send',
+    icon:'email'
+  },
+  {
+    label:'Compose',
+    route:'compose',
+    icon:'email'
+  },
+  {
     label:'Projects',
     route:'projects',
     icon:'email'
-  }];
+  },];
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
