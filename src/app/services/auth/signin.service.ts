@@ -57,7 +57,6 @@ export class SigninService {
     var user = localStorage.getItem('user');
     await this.http.post(`${environment.API_END}developers/logout?access_token=${JSON.parse(user).id}`, {}).
       subscribe((data) => {
-        console.log(data);
         localStorage.removeItem('user');
       });
     localStorage.removeItem('user');
