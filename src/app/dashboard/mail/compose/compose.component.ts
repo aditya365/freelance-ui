@@ -7,6 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Http } from '@angular/http';
 import { environment } from 'src/environments/environment';
 import { MailService } from '../mail.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-compose',
@@ -15,19 +16,22 @@ import { MailService } from '../mail.service';
 })
 export class ComposeComponent implements OnInit {
   mailForm: any;
-  constructor(private http: Http, private mailService: MailService) { }
+  constructor(private http: Http, private mailService: MailService,
+    private router: Router) { }
 
   ngOnInit() {
     this.mailForm = new FormGroup({
-      body: new FormControl("",[Validators.required]),
-      to: new FormControl("",[Validators.required]),
-      subject:new FormControl("",[Validators.required])
+      body: new FormControl("", [Validators.required]),
+      to: new FormControl("", [Validators.required]),
+      subject: new FormControl("", [Validators.required])
     })
-   
+
   }
   on_submit() {
-     var user = localStorage.getItem('user');
-     this.mailService.createMail(this.mailForm.value).subscribe((data)=>{console.log(data)});
+    var user = localStorage.getItem('user');
+    this.mailService.createMail(this.mailForm.value).subscribe((data) => {
+      this.router.navigate(['/dashboard/sent']);
+    });
   }
 }
 

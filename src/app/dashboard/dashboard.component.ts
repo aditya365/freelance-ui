@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  private user: any;
+  user: any;
 
   mobileQuery: MediaQueryList;
   private _mobileQueryListener: () => void;
@@ -19,8 +19,16 @@ export class DashboardComponent implements OnInit {
     route: '/dashboard',
     icon: 'dashboard'
   }, {
-    label: 'Mail',
-    route: 'mail',
+    label: 'Inbox',
+    route: 'inbox',
+    icon: 'email'
+  }, {
+    label: 'Sent Items',
+    route: 'sent',
+    icon: 'email'
+  }, {
+    label: 'Compose',
+    route: 'compose',
     icon: 'email'
   }, {
     label: 'Projects',

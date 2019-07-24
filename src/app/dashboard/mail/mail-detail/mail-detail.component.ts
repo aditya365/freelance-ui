@@ -11,11 +11,24 @@ import { ActivatedRoute } from '@angular/router';
 export class MailDetailComponent implements OnInit {
   mailId: any;
   mail: Mail;
-  constructor(private mailservice: MailService, private activeRoute: ActivatedRoute) { }
+  type: string;
+  constructor(private mailservice: MailService, private activeRoute: ActivatedRoute) {
+  }
 
   ngOnInit() {
-    console.log(this.activeRoute);
-    this.mailservice.getInboxById(this.activeRoute.snapshot.params.id).subscribe(mail => this.mail = mail);
-    console.log(this.mail)
+    this.getMailType();
+    this.getMailDetails();
+  }
+
+  getMailType() {
+    this.type = this.activeRoute.snapshot.routeConfig.path.indexOf('inbox') > -1 ? 'inbox' : 'sent';
+  }
+
+  getMailDetails() {
+    if (this.type == 'inbox') {
+      this.mailservice.getInboxById(this.activeRoute.snapshot.params.id).subscribe(mail => this.mail = mail[0]);
+    } else {
+      this.mailservice.getSentById(this.activeRoute.snapshot.params.id).subscribe(mail => this.mail = mail[0]);
+    }
   }
 }

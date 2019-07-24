@@ -30,4 +30,10 @@ export class MailService {
     var user = localStorage.getItem('user');
     return this.http.get<Mail[]>(`${environment.API_END}inboxes/sent?access_token=${JSON.parse(user).id}`);
   }
+
+  getSentById(id:any):Observable<Mail>{
+    console.log(id + "in service");
+    var user = localStorage.getItem('user');
+    return this.http.get<Mail>(`${environment.API_END}inboxes/sent/${id}?access_token=${JSON.parse(user).id}`);
+  }
 }
