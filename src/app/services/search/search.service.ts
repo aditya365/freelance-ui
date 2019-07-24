@@ -39,6 +39,6 @@ export class SearchService {
     });
   };
   getRandomDeveloperProfile() {
-    return this.http.get(`${environment.API_END}developers`);
+    return this.http.get(`${environment.API_END}developers?filter[limit]=10`);
   }
 }
