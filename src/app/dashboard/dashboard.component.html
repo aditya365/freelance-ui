@@ -4,6 +4,14 @@
             <mat-icon>menu</mat-icon>
         </button>
         <h1>Freelancer</h1>
+        <span class="app-spacer"></span>
+        <div class="right">
+            <button mat-button [matMenuTriggerFor]="menu">{{user.username}}</button>
+            <mat-menu #menu="matMenu">
+                <a mat-menu-item [routerLink]="profile">Profile</a>
+                <a mat-menu-item (click)="signOut()">Logout</a>
+            </mat-menu>
+        </div>
     </mat-toolbar>
     <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
         <mat-sidenav #snav [mode]="mobileQuery.matches ? 'side' : 'side'" [fixedInViewport]="mobileQuery.matches"
