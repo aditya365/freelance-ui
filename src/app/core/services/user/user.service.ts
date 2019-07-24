@@ -8,7 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
+
   constructor(private http: HttpClient) { }
+
+  isLoggedIn() {
+    return localStorage.getItem('user') != null;
+  }
 
   getUserDetails(): Observable<any> {
     let user = JSON.parse(localStorage.getItem('user'));
