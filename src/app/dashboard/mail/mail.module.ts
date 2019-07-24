@@ -15,7 +15,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     MailRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class MailModule { }
