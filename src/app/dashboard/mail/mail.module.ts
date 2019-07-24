@@ -23,7 +23,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFontAwesomeModule,    
     MailRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ]
 })
 export class MailModule { }
