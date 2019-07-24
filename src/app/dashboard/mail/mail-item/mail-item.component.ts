@@ -7,7 +7,8 @@ import { Mail } from '../models/mail';
   styleUrls: ['./mail-item.component.scss']
 })
 export class MailItemComponent implements OnInit {
-@Input() mail:Mail;
+  @Input() mail: Mail;
+  @Input() type: string;
   constructor() { }
 
   ngOnInit() {

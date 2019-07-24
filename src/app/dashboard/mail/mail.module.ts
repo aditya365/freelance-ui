@@ -8,11 +8,19 @@ import { MailItemComponent } from './mail-item/mail-item.component';
 import { MailDetailComponent } from './mail-detail/mail-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ComposeComponent } from './compose/compose.component';
 
+import{NgxEditorModule} from 'ngx-editor'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 @NgModule({
-  declarations: [InboxComponent, SentComponent, MailItemComponent, MailDetailComponent],
+  declarations: [InboxComponent, SentComponent, MailItemComponent, MailDetailComponent, ComposeComponent],
   imports: [
     CommonModule,
+    NgxEditorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AngularFontAwesomeModule,    
     MailRoutingModule,
     HttpClientModule,
     SharedModule,

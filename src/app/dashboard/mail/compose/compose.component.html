@@ -1,0 +1,12 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
+
+<form class="form" [formGroup]="mailForm" (ngSubmit)="on_submit()" method="post">
+  <mat-form-field class="full-width">
+    <input matInput placeholder="To" formControlName="to">
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <input matInput placeholder="Subject" formControlName="subject">
+  </mat-form-field>
+  <app-ngx-editor formControlName="body" minHeight="200px"></app-ngx-editor>
+  <button type="submit" mat-raised-button color="primary">Send</button>
+</form>

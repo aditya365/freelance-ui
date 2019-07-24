@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { NgxEditorModule } from 'ngx-editor'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+
+
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -19,6 +23,9 @@ import { MailModule } from './mail/mail.module';
   declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     CommonModule,
+    NgxEditorModule,
+    FormsModule,
+    ReactiveFormsModule,
     DashboardRoutingModule,
     SharedModule,
     MailModule

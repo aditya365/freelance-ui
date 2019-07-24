@@ -1,2 +1,13 @@
-<a routerLink="../../mail" mat-flat-button color="primary">Back to Inbox</a>
-<!-- {{mail.body}} -->
+<a routerLink="../../{{type}}" mat-flat-button color="primary">Back to {{type}}</a>
+<div class="mail-section">
+    <h4>{{mail.subject}}</h4>
+    <div *ngIf="type=='inbox';then inboxSection else sentSection">
+    </div>
+    <ng-template #inboxSection>
+        <p>From: <em>{{mail.from}}</em></p>
+    </ng-template>
+    <ng-template #sentSection>
+        <p>To: <em>{{mail.to}}</em></p>
+    </ng-template>
+    <div [innerHTML]="mail.body" class="mail-body"></div>
+</div>

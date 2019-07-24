@@ -8,7 +8,7 @@
         <div class="right">
             <button mat-button [matMenuTriggerFor]="menu">{{user.username}}</button>
             <mat-menu #menu="matMenu">
-                <a mat-menu-item [routerLink]="profile">Profile</a>
+                <a mat-menu-item routerLink="/profile">Profile</a>
                 <a mat-menu-item (click)="signOut()">Logout</a>
             </mat-menu>
         </div>
