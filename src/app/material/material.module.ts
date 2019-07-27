@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatAutocompleteModule, MatSidenavModule, MatIconModule, MatListModule, MatTree, MatTreeModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, 
+    MatFormFieldModule, MatInputModule, MatSnackBarModule,
+    MatSelectModule, MatAutocompleteModule, MatSidenavModule,
+    MatIconModule, MatListModule, MatCardModule, MatTreeModule,
+    MatGridListModule, MatSliderModule, MatMenuModule
+  } from '@angular/material';
+// import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatAutocompleteModule, MatSidenavModule, MatIconModule, MatListModule, MatTree, MatTreeModule, MatCardModule, MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -16,6 +22,9 @@ import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, 
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatCardModule,
+    MatGridListModule,
+    MatSliderModule,
     MatTreeModule,
     MatCardModule,
     MatMenuModule
@@ -31,6 +40,8 @@ import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, 
     MatButtonModule,
     MatIconModule,
     MatListModule,
+    MatGridListModule,
+    MatSliderModule,
     MatTreeModule,
     MatCardModule,
     MatMenuModule

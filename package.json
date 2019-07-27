@@ -33,7 +33,7 @@
     "ngx-bootstrap": "^5.1.0",
     "ngx-editor": "^4.1.0",
     "ngx-infinite-scroll": "^7.2.0",
-    "rxjs": "~6.4.0",
+    "rxjs": "^6.4.0",
     "rxjs-compat": "^6.5.2",
     "set-default-browser": "^1.0.1",
     "tslib": "^1.9.0",
