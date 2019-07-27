@@ -28,11 +28,10 @@ export class SignupService {
         console.log(data.json());
         this.response = data.json();
         if (data.status === 200) {
-          console.log(user.realm + 'Registration success');
           console.log('user', JSON.stringify(this.response));
           this.alert.alert('Registration success', 'close');
           this.loggedIn = false;
-          this.router.navigate(['verify-email']);
+          this.router.navigate(['dashboard']);
         } else if (data.status === 422){
           console.log("422 Error: " + data.json())
         }

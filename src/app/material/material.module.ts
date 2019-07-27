@@ -4,8 +4,9 @@ import { MatToolbarModule, MatButtonModule,
     MatFormFieldModule, MatInputModule, MatSnackBarModule,
     MatSelectModule, MatAutocompleteModule, MatSidenavModule,
     MatIconModule, MatListModule, MatCardModule, MatTreeModule,
-    MatGridListModule, MatSliderModule
+    MatGridListModule, MatSliderModule, MatMenuModule
   } from '@angular/material';
+// import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatAutocompleteModule, MatSidenavModule, MatIconModule, MatListModule, MatTree, MatTreeModule, MatCardModule, MatMenuModule } from '@angular/material';
 
 @NgModule({
   declarations: [],
@@ -24,7 +25,9 @@ import { MatToolbarModule, MatButtonModule,
     MatCardModule,
     MatGridListModule,
     MatSliderModule,
-    MatTreeModule
+    MatTreeModule,
+    MatCardModule,
+    MatMenuModule
   ], exports:[
     MatToolbarModule,
     MatButtonModule,
@@ -37,10 +40,11 @@ import { MatToolbarModule, MatButtonModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    MatCardModule,
     MatGridListModule,
     MatSliderModule,
-    MatTreeModule
+    MatTreeModule,
+    MatCardModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }

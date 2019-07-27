@@ -8,7 +8,7 @@ import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  @Input() links: any;
+  @Input() public links: any;
   constructor() { }
 
   ngOnInit() {

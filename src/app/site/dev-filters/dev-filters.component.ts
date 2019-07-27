@@ -38,7 +38,4 @@ export class DevFiltersComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
 }

@@ -22,7 +22,6 @@ export class SigninService {
         this.response = data.json();
         console.log("Response status" + this.response)
         if (data.status === 200) {
-          console.log('Success Developer');
           localStorage.setItem('user', JSON.stringify(this.response));
           this.loggedIn = true;
           localStorage.setItem('userRole', 'developer');
@@ -39,8 +38,7 @@ export class SigninService {
           this.response = data.json();
           if (data.status === 200) {
             localStorage.setItem('user', JSON.stringify(this.response));
-            localStorage.setItem('userRole', 'poster');
-            this.alert.alert('You are a Poster!', 'Close');
+            // this.alert.alert('You have  a Poster!', 'Close');
             setTimeout(() => {
               this.router.navigate(['/dashboard']);
             }, 2000);
@@ -57,7 +55,6 @@ export class SigninService {
     var user = localStorage.getItem('user');
     await this.http.post(`${environment.API_END}developers/logout?access_token=${JSON.parse(user).id}`, {}).
       subscribe((data) => {
-        console.log(data);
         localStorage.removeItem('user');
       });
     localStorage.removeItem('user');

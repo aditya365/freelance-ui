@@ -1,1 +1,3 @@
-<p>sent works!</p>
+<mat-nav-list>
+    <app-mail-item  *ngFor="let mail of mails" [type]="sent" [mail]="mail"></app-mail-item>
+</mat-nav-list>

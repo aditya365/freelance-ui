@@ -1,8 +1,5 @@
-<a mat-list-item routerLink="../mail/{{mail.id}}">
+<a mat-list-item routerLink="{{mail.id}}" class="mail-item">
     <img matListAvatar src="../../../../assets/images/mail-avatar.PNG" alt="User">
-    <h3 matLine> {{mail.from}} - {{mail.subject}} </h3>
-    <!-- <p matLine>
-        <span> {{message.subject}} </span>
-        <span class="demo-2"> -- {{message.content}} </span>
-    </p> -->
+    <h3 matLine> <em>{{mail.to}}</em> - {{mail.subject}} </h3>
 </a>
+<mat-divider></mat-divider>
