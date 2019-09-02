@@ -1,3 +1,49 @@
-<p>
-  edit works!
-</p>
+<form *ngIf="profile | async" class="example-form" [formGroup]="profileForm" (ngSubmit)="submit()">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="First name" formControlName="firstName"   [errorStateMatcher]="matcher">
+    <mat-hint>Your first name</mat-hint>
+    <mat-error *ngIf="form.firstName.hasError('required')">
+      First name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Last name" formControlName="lastName" [errorStateMatcher]="matcher">
+    <mat-hint>Your last name</mat-hint>
+    <mat-error *ngIf="form.lastName.hasError('required')">
+      Last name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+ 
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="mobile" formControlName="mobile" [errorStateMatcher]="matcher">
+    <mat-hint>Mobile number</mat-hint>
+    <mat-error *ngIf="form.mobile.hasError('required')">
+      Mobile number is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Skills</mat-label>
+    <mat-select formControlName="skills" multiple>
+      <mat-option *ngFor="let skill of skills | async" [value]="skill">{{skill.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Short description" formControlName="shortDescription" [errorStateMatcher]="matcher"></textarea>
+    <mat-hint>Short description</mat-hint>
+    <mat-error *ngIf="form.shortDescription.hasError('required')">
+      Short description is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="summary" formControlName="summary" [errorStateMatcher]="matcher">
+    <mat-hint>Summary</mat-hint>
+    <mat-error *ngIf="form.summary.hasError('required')">
+      Profile summary is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button type="submit" color="primary" mat-raised-button>Submit</button></form>

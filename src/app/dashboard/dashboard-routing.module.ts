@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewComponent } from './profile/view/view.component';
-import { EditComponent } from './profile/edit/edit.component';
+import { ProfileEditComponent } from './profile/edit/edit.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { DashboardComponent } from './dashboard.component';
 import { AuthGuardService } from '../services/guard/auth-guard.service';
@@ -20,6 +20,7 @@ const routes: Routes = [
     children: [
       { path: 'projects', component: ProjectsComponent },
       { path: 'profile', component: ProfileComponent },
+      { path: 'profile/edit', component: ProfileEditComponent },
       { path: 'inbox', component: InboxComponent },
       { path: 'inbox/:id', component: MailDetailComponent },
       { path: 'compose', component: ComposeComponent },

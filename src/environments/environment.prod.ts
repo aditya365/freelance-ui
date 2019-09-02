@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_END: 'https://freelance-api-staging.herokuapp.com/',
+  API_END: 'http://localhost:3000/',
 };

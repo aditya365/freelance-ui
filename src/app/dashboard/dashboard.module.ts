@@ -9,7 +9,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ViewComponent } from './profile/view/view.component';
-import { EditComponent } from './profile/edit/edit.component';
+import { ProfileEditComponent } from './profile/edit/edit.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,7 +20,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MailModule } from './mail/mail.module';
 
 @NgModule({
-  declarations: [ProjectsComponent, ProfileComponent, ViewComponent, EditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
+  declarations: [ProjectsComponent, ProfileComponent, ViewComponent, ProfileEditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
   imports: [
     CommonModule,
     NgxEditorModule,

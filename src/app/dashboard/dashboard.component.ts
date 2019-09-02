@@ -39,6 +39,11 @@ export class DashboardComponent implements OnInit {
     label: 'Profile',
     route: 'profile',
     icon: 'dashboard',
+  },
+  {
+    label: 'Edit profile',
+    route: 'profile/edit',
+    icon: 'dashboard',
   }
   ];
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher,

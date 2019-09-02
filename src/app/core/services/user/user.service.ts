@@ -1,25 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { UserBasic } from '../../models/user-basic.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
+  private currentUserSubject: BehaviorSubject<UserBasic>;
+  public currentUser: Observable<UserBasic>;
 
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.currentUserSubject = new BehaviorSubject<UserBasic>(JSON.parse(localStorage.getItem('user')));
+    this.currentUser = this.currentUserSubject.asObservable();
+  }
 
   isLoggedIn() {
     return localStorage.getItem('user') != null;
   }
 
-  // getBasicUserDetails(): Observable<any> {
-  //   return JSON.parse(localStorage.getItem('user'));
-  // }
   getBasicUserDetails() {
     return localStorage.getItem('user');
+  }
+
+  public get currentUserValue(): UserBasic {
+    return this.currentUserSubject.value;
+  }
+
+  getFullProfile(): Observable<any> {
+    return this.http.get(`${environment.API_END}users/${this.currentUserValue.id}`);
+  }
+
+  updateProfile(profile): Observable<any> {
+    return this.http.patch(`${environment.API_END}users/${this.currentUserValue.id}`, profile);
   }
 
   async signOut() {
