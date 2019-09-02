@@ -15,15 +15,10 @@ export class UserService {
     return localStorage.getItem('user') != null;
   }
 
-  getUserDetails(): Observable<any> {
-    let user = JSON.parse(localStorage.getItem('user'));
-    if (localStorage.getItem('userRole') === "poster") {
-      return this.http.get(`${environment.API_END}posters/${user.userId}?access_token=${user.id}`);
-    } else {
-      return this.http.get(`${environment.API_END}developers/${user.userId}?access_token=${user.id}`);
-    }
-  }
-  getUser() {
+  // getBasicUserDetails(): Observable<any> {
+  //   return JSON.parse(localStorage.getItem('user'));
+  // }
+  getBasicUserDetails() {
     return localStorage.getItem('user');
   }
 

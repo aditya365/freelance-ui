@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_END: 'https://freeintern.herokuapp.com/api/',
+  API_END: 'http://localhost:3000/',
 };
 
 /*

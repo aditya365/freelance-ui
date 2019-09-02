@@ -1,5 +1,6 @@
 <a mat-list-item routerLink="{{mail.id}}" class="mail-item">
     <img matListAvatar src="../../../../assets/images/mail-avatar.PNG" alt="User">
-    <h3 matLine> <em>{{mail.to}}</em> - {{mail.subject}} </h3>
+    <h3 matLine *ngIf="mail.from"> <em>{{mail.from}}</em> - {{mail.subject}} </h3>
+    <h3 matLine *ngIf="mail.to"> <em>{{mail.to}}</em> - {{mail.subject}} </h3>
 </a>
 <mat-divider></mat-divider>

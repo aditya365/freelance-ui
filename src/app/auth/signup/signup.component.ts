@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { UserSignup } from 'src/app/core/models/user-signup.model';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { SignupService } from 'src/app/services/auth/signup.service';
 import { Router } from '@angular/router';
 import { Role } from 'src/app/core/models/role.model';
 import { ValidationService } from 'src/app/services/auth/validation.service';
-import { ReCaptchaV3Service } from 'ng-recaptcha';
+import { ISignUp } from '../signup.model';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,7 +13,7 @@ import { ReCaptchaV3Service } from 'ng-recaptcha';
 })
 export class SignupComponent implements OnInit {
   signUpForm: FormGroup;
-  signUpDetails: UserSignup = {
+  signUpDetails: ISignUp = {
     firstName: '',
     lastName: '',
     email: '',
@@ -31,7 +30,7 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private validationService: ValidationService,
-    private signUpService: SignupService
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -49,19 +48,12 @@ export class SignupComponent implements OnInit {
       });
   }
   signUp() {
-    console.log("sign up");
-    this.signUpDetails.firstName = this.signUpForm.controls['firstName'].value;
-    this.signUpDetails.lastName = this.signUpForm.controls['lastName'].value;
-    this.signUpDetails.email = this.signUpForm.controls['email'].value;
-    this.signUpDetails.password = this.signUpForm.controls['password'].value;
-    this.signUpDetails.role = this.signUpForm.controls['role'].value;
-    this.signUpService.signUp(this.signUpDetails);
+    this.authService.signUp(this.signUpForm.value);
   }
   getErrorMessage() {
 
   }
   onConfirmPasswordChange() {
-    console.log('Password and confirm are here to check' + this.signUpForm.controls['password'].value)
     const password = this.signUpForm.controls['password'].value;
     const confirmPassword = this.signUpForm.controls['cPassword'].value;
     if (password === confirmPassword) {

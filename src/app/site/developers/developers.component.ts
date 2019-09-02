@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from 'src/app/services/search/search.service';
-import { SearchProfile } from 'src/app/core/models/search-profile.model';
+import { DevelopersService } from 'src/app/core/services/developers/developers.service';
 
 @Component({
   selector: 'app-developers',
@@ -8,16 +7,9 @@ import { SearchProfile } from 'src/app/core/models/search-profile.model';
   styleUrls: ['./developers.component.scss']
 })
 export class DevelopersComponent implements OnInit {
-
-  result: SearchProfile[];
-
-  constructor(public searchService: SearchService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.searchService.getRandomDeveloperProfile().subscribe(result => {
-      this.result = result.json();
-      console.log('The re' + result.json());
-    });
   }
 
 }

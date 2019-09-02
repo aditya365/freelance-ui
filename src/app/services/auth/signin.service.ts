@@ -3,7 +3,7 @@ import { HttpHeaders } from '@angular/common/http';
 import { Http } from '@angular/http';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/user-login.model';
+import { UserBasic } from 'src/app/core/models/user-basic.model';
 import { AlertService } from '../alert/alert.service';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class SigninService {
 
   constructor(private http: Http, private router: Router, private alert: AlertService) { }
 
-  async signIn(user: User) {
+  async signIn(user: UserBasic) {
     await this.http.post(`${environment.API_END}developers/login`, user).
       subscribe((data) => {
         console.log(data.json());

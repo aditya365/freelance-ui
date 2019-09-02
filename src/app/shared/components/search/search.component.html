@@ -1,10 +1,23 @@
 <form class="search-form">
-  <mat-form-field class="search-form-full-width Input" appearance="outline">
-    <input id="input"  class="Input-text" (keyup)="query$.next($event.target.value)" type="text" placeholder="Search for a skill/ work" [matAutocomplete]="auto">
+  <!-- <mat-form-field class="search-form-full-width Input" appearance="outline"> -->
+    <input id="input" class="Input-text" (keyup)="query$.next($event.target.value)" type="text"
+      placeholder="Search for a skill/ work" [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete">
       <mat-option *ngFor="let skill of skills | slice:0:5" [value]="skill.skill">
         <button class="btn" mat-flat-button routerLink="/search/{{skill.skill}}">{{skill.skill}}</button>
       </mat-option>
     </mat-autocomplete>
-  </mat-form-field>
+  <!-- </mat-form-field> -->
 </form>
+
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input type="text" placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl"
+      [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete">
+      <mat-option *ngFor="let skill of skills | slice:0:5" [value]="skill.skill">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form> -->

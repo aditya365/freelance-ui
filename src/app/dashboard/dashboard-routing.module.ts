@@ -10,11 +10,13 @@ import { InboxComponent } from './mail/inbox/inbox.component';
 import { MailDetailComponent } from './mail/mail-detail/mail-detail.component';
 import { ComposeComponent } from './mail/compose/compose.component';
 import { SentComponent } from './mail/sent/sent.component'
+import { AuthGuard } from '../core/guards/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate:[AuthGuard],
     children: [
       { path: 'projects', component: ProjectsComponent },
       { path: 'profile', component: ProfileComponent },

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
-import { User } from 'src/app/core/models/user-login.model';
+import { UserBasic } from 'src/app/core/models/user-basic.model';
 
 import { HttpHeaders } from '@angular/common/http';
 import { Http } from '@angular/http';

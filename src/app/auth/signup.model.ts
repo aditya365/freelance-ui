@@ -1,7 +1,7 @@
-export interface UserSignup {
+export interface ISignUp {
     firstName: string,
     lastName : string,
     email : string,
     password: string,
-    role: string,
+    role: string
 }

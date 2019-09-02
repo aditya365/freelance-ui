@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.getUserDetails().subscribe(user => this.user = user);
+    this.user = this.userService.getBasicUserDetails();
   }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

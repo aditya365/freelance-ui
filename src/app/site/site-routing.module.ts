@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { DevelopersComponent } from './developers/developers.component';
-import { DeveloperSearchComponent } from './developer-search/developer-search.component';
+import { SiteComponent } from './site.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'developers', component: DevelopersComponent },
-  { path: 'developers/:id', component: DeveloperSearchComponent },
-  { path: 'jobs', component: DevelopersComponent },
-  { path: 'jobs/:id', component: DeveloperSearchComponent },
+  {
+    path: '', component: SiteComponent, children: [
+      { path: '', component: HomeComponent },
+      { path: 'developers', component: DevelopersComponent },
+      // { path: 'jobs', component: DevelopersComponent },
+    ]
+  },
+  
+  // { path: 'jobs', component: DevelopersComponent },
 ];
 
 @NgModule({

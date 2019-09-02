@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Validators, FormGroup, FormBuilder} from '@angular/forms';
+import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/core/models/user-login.model';
 import { SigninService } from 'src/app/services/auth/signin.service';
+import { AuthService } from '../auth.service';
+import ISignin from './signin.model';
 
 @Component({
   selector: 'app-signin',
@@ -11,13 +12,13 @@ import { SigninService } from 'src/app/services/auth/signin.service';
 })
 export class SigninComponent implements OnInit {
   signInForm: FormGroup;
-  userDetail: User = {
+  userDetail: ISignin = {
     email: '',
     password: ''
   };
 
   constructor(private formBuilder: FormBuilder, private router: Router
-    , private signInService: SigninService) { }
+    , private authService: AuthService) { }
 
   ngOnInit() {
     this.signInForm = this.formBuilder.group(
@@ -28,12 +29,6 @@ export class SigninComponent implements OnInit {
       });
   }
   signIn() {
-    this.userDetail.email = this.signInForm.controls['email'].value;
-    this.userDetail.password = this.signInForm.controls['password'].value;
-    console.log('User detail is' + this.userDetail);
-    this.signInService.signIn(this.userDetail);
-  }
-  getErrorMessage() {
-
+    this.authService.signIn(this.signInForm.value);
   }
 }

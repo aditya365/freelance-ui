@@ -3,7 +3,7 @@ import { Observable, Observer, Subject } from 'rxjs';
 import 'rxjs/Rx';
 import { Subscription } from 'rxjs/Subscription';
 import { ObserversModule } from '@angular/cdk/observers';
-import { Skills } from 'src/app/core/models/skills.model';
+import { Skill } from 'src/app/core/models/skill.model';
 import { SearchService } from 'src/app/services/search/search.service';
 
 @Component({
@@ -12,10 +12,10 @@ import { SearchService } from 'src/app/services/search/search.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  skills: Skills[];
+  skills: Skill[];
   query$ = new Subject<string>();
 
-  constructor(private searchService: SearchService) { 
+  constructor(private searchService: SearchService) {
     this.searchService.search(this.query$)
       .subscribe(results => {
         this.skills = results;
@@ -23,12 +23,12 @@ export class SearchComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+
   }
   getSkill() {
-   
+
   }
   startObserver() {
-    
+
   }
 }

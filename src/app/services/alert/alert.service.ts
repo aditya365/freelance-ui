@@ -8,7 +8,6 @@ export class AlertService {
 
   constructor(private snackBar: MatSnackBar) { }
   alert(message: string, action: string) {
-    console.log("You are calling alert in Service" + message, action)
     this.snackBar.open(message, action, {
       duration: 5000
     })
