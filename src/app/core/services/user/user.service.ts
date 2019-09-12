@@ -28,6 +28,10 @@ export class UserService {
     return this.currentUserSubject.value;
   }
 
+  getUsers(){
+    return this.http.get(`${environment.API_END}users`);
+  }
+
   getFullProfile(): Observable<any> {
     return this.http.get(`${environment.API_END}users/${this.currentUserValue.id}`);
   }

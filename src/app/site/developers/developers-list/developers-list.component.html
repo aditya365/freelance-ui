@@ -1,1 +1,1 @@
-<app-developers-item *ngFor="let developer of developers" [developer]="developer"></app-developers-item>
+<app-developers-item *ngFor="let developer of developers|async" [developer]="developer"></app-developers-item>
