@@ -13,6 +13,6 @@ export class DevelopersListComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.developers = this.userService.getUsers();
+    this.developers = this.userService.getDevelopers();
   }
 }

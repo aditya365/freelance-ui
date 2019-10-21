@@ -18,6 +18,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 import { MailModule } from './mail/mail.module';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [ProjectsComponent, ProfileComponent, ViewComponent, ProfileEditComponent, ProjectListComponent, DashboardComponent, HeaderComponent, FooterComponent, SidebarComponent],
@@ -28,7 +29,8 @@ import { MailModule } from './mail/mail.module';
     ReactiveFormsModule,
     DashboardRoutingModule,
     SharedModule,
-    MailModule
+    MailModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [DashboardComponent]

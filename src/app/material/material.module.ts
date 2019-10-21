@@ -4,7 +4,7 @@ import { MatToolbarModule, MatButtonModule,
     MatFormFieldModule, MatInputModule, MatSnackBarModule,
     MatSelectModule, MatAutocompleteModule, MatSidenavModule,
     MatIconModule, MatListModule, MatCardModule, MatTreeModule,
-    MatGridListModule, MatSliderModule, MatMenuModule
+    MatGridListModule, MatSliderModule, MatMenuModule, MatChipList, MatChip, MatChipsModule
   } from '@angular/material';
 // import { MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatSnackBarModule, MatSelectModule, MatAutocompleteModule, MatSidenavModule, MatIconModule, MatListModule, MatTree, MatTreeModule, MatCardModule, MatMenuModule } from '@angular/material';
 
@@ -27,7 +27,8 @@ import { MatToolbarModule, MatButtonModule,
     MatSliderModule,
     MatTreeModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule
   ], exports:[
     MatToolbarModule,
     MatButtonModule,
@@ -44,7 +45,8 @@ import { MatToolbarModule, MatButtonModule,
     MatSliderModule,
     MatTreeModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }

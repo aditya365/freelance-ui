@@ -32,6 +32,13 @@ export class UserService {
     return this.http.get(`${environment.API_END}users`);
   }
 
+  getDevelopers(){
+    return this.http.get(`${environment.API_END}users/developers`);
+  }
+  getPosters(){
+    return this.http.get(`${environment.API_END}users/posters`);
+  }
+
   getFullProfile(): Observable<any> {
     return this.http.get(`${environment.API_END}users/${this.currentUserValue.id}`);
   }
